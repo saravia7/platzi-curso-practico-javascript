@@ -33,8 +33,8 @@ console.group("Triángulos");
 // const alturaTriangulo = 5.5;
 // console.log("La altura del triángulo es de: " + alturaTriangulo + "cm");
 
-function perimetroTriangulo(lado1, lado2, base) {
-  return lado1 + lado2 + base;
+function perimetroTriangulo(ladoA, ladoB, baseT) {
+  return ladoA + ladoB + baseT;
 }
 // console.log("El perímetro del triángulo es: " + perimetroTriangulo + "cm");
 
@@ -43,6 +43,18 @@ function areaTriangulo(base, altura) {
 }
 console.log("El área del triángulo es: " + areaTriangulo + "cmˆ2");
 
+//triangulo isosceles-altura
+function alturaTriangulo(a, b, base){
+  if(a == b){
+      
+      return Math.sqrt(Math.pow(a,2) - Math.pow(base/2,2));
+  }
+  else{
+      console.error("los lados a y b no son iguales");
+      return "el triángulo no es isósceles";
+  }
+
+}
 console.groupEnd();
 
 // Código del círculo
@@ -90,3 +102,41 @@ function calcularAreaCuadrado() {
   const area = areaCuadrado(value);
   alert(area);
 }
+
+//triangulo perimetro,area y altura
+function calcularPerimetroTriangulo(){
+  const input1 = document.getElementById("InputLado1");
+  const lado1 = input1.value;
+  const input2 = document.getElementById("InputLado2");
+  const lado2 = input2.value;
+  const input3 = document.getElementById("InputBase");
+  const base = input3.value;
+  
+  const perimetro = perimetroTriangulo(lado1, lado2, base);
+  alert("El Perimetro del triangulo es:" + perimetro);
+
+}
+
+function calcularAreaTriangulo(){
+  const input4 =document.getElementById("InputAltura");
+  const altura = input4.value;
+  const input3 = document.getElementById("InputBase");
+  const base = input3.value;
+
+  const area = areaTriangulo(altura, base);
+  alert("El area del triangulo es: " + area);
+
+
+}
+
+function calcularAlturaTriangulo(){
+  const input1 = document.getElementById("InputLado1");
+  const lado1 = input1.value;
+  const input2 = document.getElementById("InputLado2");
+  const lado2 = input2.value;
+  const input3 = document.getElementById("InputBase");
+  const base = input3.value;
+  const altura = alturaTriangulo(lado1, lado2, base);
+  alert("La altura es de: " + altura);
+} 
+
